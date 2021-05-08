@@ -1,0 +1,316 @@
+@font-face {
+  font-family: Ancient;
+  src: url(18642.ttf);
+}
+
+body {
+  background-image: url(black-abstract-222.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  margin: 25px 5%;
+}
+
+.header-img {
+  margin: 10px auto;
+  height: 270px;
+}
+
+.header-title {
+  text-align: center;
+  font: 36pt Ancient, fantasy;
+}
+
+.header-subtitle {
+  text-align: center;
+  font: bold 24pt serif;
+}
+
+.header-description {
+  font: 14pt serif;
+  line-height: 1.7em;
+}
+
+main {
+  columns: auto 4;
+  column-gap: 10px;
+  column-fill: balance;
+  margin: 0 20px;
+}
+
+.card {
+  display: inline-block;
+  width: 80%;
+  min-height: 610px;
+  margin: 30px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #fff;
+  overflow: hidden;
+}
+
+@media (max-width: 1140px) {
+  .card {
+    min-height: 710px;
+  }
+  .card > img {
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    columns: auto 2;
+  }
+  .card {
+    min-height: 610px;
+  }
+  .card > img {
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    columns: auto 1;
+  }
+  .card {
+    min-height: 580px;
+  }
+  .card > img {
+    height: 150px !important;
+  }
+}
+
+.switch_box {
+  text-align: right;
+}
+
+input[id="list_of_cats"]:checked ~ main {
+  columns: auto 1;
+  column-gap: 10px;
+  column-fill: auto;
+  margin: 20px 0px;
+}
+
+input[id="list_of_cats"]:checked ~ main .card {
+  display: block;
+  width: 90%;
+  min-height: 230px;
+  columns: auto 3;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+input[id="list_of_cats"]:checked ~ main .card:nth-child(1) {
+  margin-top: 20px;
+}
+
+input[id="list_of_cats"]:checked ~ main .card img {
+  display: inline-block;
+  margin-left: 20%;
+  margin-top: 3%;
+}
+
+@media (max-width: 768px) {
+  input[id="list_of_cats"]:checked ~ main .card {
+    columns: auto 1;
+    min-height: 580px;
+  }
+  input[id="list_of_cats"]:checked ~ main .card img {
+    display: block;
+    margin: 0 auto;
+    height: 300px !important;
+  }
+}
+
+/*input[id="list_of_cats"]:checked ~ .main .card .description {
+    margin-top: 30%;
+}*/
+
+.card:hover {
+  box-shadow: 0 0 20px red;
+}
+
+.card > img {
+  height: 200px;
+  display: block;
+  margin: 5px auto;
+  box-shadow: 0 0 15px #fff;
+  border-radius: 5px;
+}
+
+.card > img:hover {
+  opacity: 0.7;
+}
+
+.name-wrapper:hover,
+.name-wrapper > .name:hover {
+  color: red;
+}
+
+.name-wrapper {
+  margin-top: 1.3em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.name {
+  font: 20pt Ancient, serif;
+}
+
+.price {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font: bold 16pt sans-serif;
+  color: red;
+}
+
+s {
+  font-size: 12pt;
+  font-weight: normal;
+}
+
+.description {
+  margin-top: 5px;
+  font: 12pt serif;
+  line-height: 1.5em;
+}
+
+/* Switch */
+
+.switch_cards {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(cards-off.png);
+  background-size: 3em auto;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 5px;
+  width: 3em;
+  height: 3em;
+  font-size: inherit;
+}
+
+.switch_list {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(list-off.png);
+  background-size: 3em auto;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 5px;
+  width: 3em;
+  height: 3em;
+  font-size: inherit;
+}
+
+.switch_cards:checked {
+  background-image: url(cards-on.png);
+  outline: none;
+}
+
+.switch_list:checked {
+  background-image: url(list-on.png);
+  outline: none;
+}
+
+/* Rating */
+
+.rating {
+  margin: 0 0 1em 0;
+  padding: 0;
+  border: none;
+}
+
+/* Caption */
+
+.rating__caption {
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+
+/* Group */
+
+.rating__group {
+  position: relative;
+  width: 10em;
+  height: 2em;
+  background-image: url(pentagram-off.png);
+  background-size: 2em auto;
+  background-repeat: repeat-x;
+}
+
+.rating__group:focus-within {
+  outline: 0.2em solid red;
+  outline-offset: 0.2em;
+}
+
+/* Star */
+
+.rating__star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 2em;
+  font-size: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-size: 2em auto;
+  background-repeat: repeat-x;
+}
+
+.rating__star:focus {
+  outline: none;
+}
+
+.rating__star:hover,
+.rating__star:checked {
+  background-image: url(pentagram-on.png);
+}
+
+.rating__star:hover ~ .rating__star {
+  background-image: url(pentagram-off.png);
+}
+
+/* Options */
+
+.rating__star:nth-of-type(1) {
+  z-index: 5;
+  width: 2em;
+}
+
+.rating__star:nth-of-type(2) {
+  z-index: 4;
+  width: 4em;
+}
+
+.rating__star:nth-of-type(3) {
+  z-index: 3;
+  width: 6em;
+}
+
+.rating__star:nth-of-type(4) {
+  z-index: 2;
+  width: 8em;
+}
+
+.rating__star:nth-of-type(5) {
+  z-index: 1;
+  width: 10em;
+}
+
